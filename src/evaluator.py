@@ -1,6 +1,8 @@
 import math
 import matplotlib.pyplot as plt
 
+# Patrick Kelly
+
 class Evaluator:
 
     def find_intersection(self, list1, list2):
@@ -168,7 +170,7 @@ if __name__ == "__main__":
                 arr[element].append((document, rel))
         file.close()
         return arr
- 
+
     qrels = file_helper("evaluation-data/qrels")
     bm25 = file_helper("evaluation-data/bm25.trecrun")
     ql = file_helper("evaluation-data/ql.trecrun")
@@ -230,7 +232,7 @@ if __name__ == "__main__":
     for element in range(1, len(sdm['450'])):
         recall_sdm.append(evaluator.recall_at_k(qrels, element450_sdm, element))
         precision_sdm.append(evaluator.precision_at_k(qrels, element450_sdm, element))
-   
+
     plt.title("Recall v Precision")
 
     plt.plot(recall_sdm, precision_sdm, label="SDM")
